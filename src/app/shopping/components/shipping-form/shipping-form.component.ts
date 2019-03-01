@@ -15,7 +15,12 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
   @Input('shopping-cart') cart: ShoppingCart;
   userId: string;
   userSubscription: Subscription;
-  shipping = {};
+  shipping: Shipping = {
+    name: '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+  };
 
   constructor(
     private auth: AuthService,
@@ -36,4 +41,11 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
     this.userSubscription.unsubscribe();
   }
 
+}
+
+interface Shipping {
+    name: string;
+    addressLine1: string;
+    addressLine2: string;
+    city: string;
 }
