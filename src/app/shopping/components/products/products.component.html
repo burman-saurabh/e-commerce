@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-3">
+    <app-product-filter [category]="category"></app-product-filter>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="row" *ngIf="cart$ | async as cart">
+      <div class="col-sm-4" *ngFor="let p of filteredProducts; let i = index;">
+        <app-product-card [product]="p" [shopping-cart]="cart"></app-product-card>
+      </div>
+      <div class="alert alert-warning" *ngIf="filteredProducts.length === 0 && products.length !== 0">No products available in this category! please try another category.</div>
+      <!-- <div class="col-sm-12" *ngIf="(i+2)%2 === 0"></div> -->
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <div class="row">
+  <ng-container *ngFor="let p of products$ | async; let i = index;">
+    <div class="col">
+      <div class="card" style="width: 15rem;">
+        <img class="card-img-top" [src]="p.imageUrl" *ngIf="p.imageUrl" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.title }}</h5>
+          <p class="card-title">{{ p.price | currency:'USD':true }}</p>
+          <a href="#" class="btn btn-primary block">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="w-100" *ngIf="(i+1)%2 === 0"></div>
+  </ng-container>
+</div> -->

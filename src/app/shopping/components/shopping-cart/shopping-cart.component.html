@@ -1,0 +1,31 @@
+<h1>Shopping Cart</h1>
+<div class="row col-9 my-3" *ngIf="cart$ | async as cart">
+  <div class="my-2">
+      <h5 class="text-secondary d-inline mr-3">You have {{ cart.totalItemsCount }} items in your shopping cart</h5>
+      <button class="btn btn-light d-inline" (click)="clearShoppingCart()">Clear Shopping Cart</button>
+  </div>
+  <table class="table my-2">
+    <tr>
+      <th></th>
+      <th>Product</th>
+      <th class="text-center">Quantity</th>
+      <th class="text-right">Price per Item</th>
+      <th class="text-right">Total</th>
+    </tr>
+    <tr *ngFor="let shoppingCartItem of cart.itemsArray">
+      <td><img [src]="shoppingCartItem.product.imageUrl" class="thumbnail"></td>
+      <td>{{ shoppingCartItem.product.title }}</td>
+      <td class="text-center"><app-product-quantity [product]="shoppingCartItem.product" [shopping-cart]="cart"></app-product-quantity></td>
+      <td class="text-right">{{ shoppingCartItem.product.price | currency:'USD'}}</td>
+      <td class="text-right">{{ shoppingCartItem.totalPrice | currency:'USD'}}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th class="text-right">{{ cart.totalPrice | currency:'USD'}}</th>
+    </tr>
+  </table>
+  <button class="btn btn-danger" [routerLink]="['/check-out']">Check Out</button>
+</div>

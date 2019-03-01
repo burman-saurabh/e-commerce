@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="offset-3 col-6">
+    <button class="btn btn-primary w-100 my-2" (click)="login()">Login With Google</button>
+  </div>
+  <div class="offset-3 col-6">
+    <button class="btn btn-primary w-100">Login With Facebook</button>
+  </div>
+
+  <div class="offset-3 col-6 card card-body my-2">
+    <form #f="ngForm" (ngSubmit)="loginWithCredentials(f.value)">
+      <div class="form-group">
+        <label for="email"><b>Email address:</b></label>
+        <input #email="ngModel" ngModel name="email" type="email" class="form-control" id="email" required email>
+        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+          <div *ngIf="email.errors.required">Email is Requied.</div>
+          <div *ngIf="email.errors.email">Email format is invalid.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd"><b>Password:</b></label>
+        <input #password="ngModel" ngModel name="password" type="password" class="form-control" id="pwd" required>
+        <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+          Password is required.
+        </div>
+      </div>
+      <div></div>
+      <button type="submit" class="btn btn-primary mr-2">Login</button>
+      <button type="button" (click)="registerUserWithCredentials(f.value)" class="btn btn-primary my-2">Register</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- <p *ngIf="!(auth.user$ | async)">user not there</p> -->
+<!-- if we use above ngIf then issue while logout and navigate to this component. -->
+
+
+
+
+
+
+<!-- <p>
+  <button class="btn btn-primary" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapse1">
+    New User
+  </button>
+  <button class="btn btn-primary mx-2" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapse2">
+    Sign In with Credentials
+  </button>
+</p>
+<div id="collapse1" [ngbCollapse]="!isCollapsed">
+  <div class="card card-body">
+    1
+  </div>
+</div>
+<div id="collapse2" [ngbCollapse]="!isCollapsed">
+  <div class="card card-body">
+    2
+  </div>
+</div> -->

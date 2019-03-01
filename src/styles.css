@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+    padding-top: 80px;
+}
+
+#toast-container > div {
+    opacity:1;
+}
+
+.card-footer button {
+    cursor: pointer;
+}
+
+.thumbnail {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 100%;
+}

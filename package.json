@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.0.0",
+    "@angular/animations": "^7.0.4",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
@@ -20,8 +20,18 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.2",
+    "angular-6-datatable": "^0.8.0",
+    "angularfire2": "^5.1.1",
+    "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
-    "rxjs": "~6.3.3",
+    "firebase": "^5.8.4",
+    "firebase-tools": "^6.3.1",
+    "g": "^2.0.1",
+    "ng2-validation": "^4.2.0",
+    "ngx-toastr": "^9.1.2",
+    "rxjs": "^6.2.2",
+    "rxjs-compat": "^6.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
